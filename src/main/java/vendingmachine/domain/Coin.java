@@ -32,7 +32,10 @@ public enum Coin{
 
     public static Coin getCoinByAmount(int amount){
         for(Coin coin : Coin.values()){
-            if(coin.amount)
+            if(coin.amount == coin.getAmount()){
+                return coin;
+            }
         }
+        return null;
     }
 }
