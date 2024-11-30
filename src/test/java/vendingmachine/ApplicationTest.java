@@ -10,6 +10,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ApplicationTest extends NsTest {
     private static final String ERROR_MESSAGE = "[ERROR]";
 
+    //잔돈 이상한경우 숫자가아닌경우
+    //잔돈 이상한경우 10으로 안나눠지는경우
+    //잔돈 이상한경우 음수인 경우
+
+    //상품 가격 10으로 안나눠진경우
+
+    //상품 개수 유효하지 않은 경우
+
+    //모든 상품 소진된 경우 잔돈 바로 돌려주는지
+
+    //남은 금액이 상품의 최저 가격보다 적은경우 잔돈 돌려주는지
+
+    //반환 못하는 경우 자판기에 돈 남아있는지
+
+    //잔돈보다 초과해서 반환하지 않는지
     @Test
     void 기능_테스트() {
         assertRandomNumberInListTest(
