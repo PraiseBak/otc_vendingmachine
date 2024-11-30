@@ -1,16 +1,14 @@
 package vendingmachine.domain;
 
-import static vendingmachine.domain.Coin.*;
-
-import java.util.HashMap;
 import java.util.Map;
+import vendingmachine.dto.RemainCoinCalculateResult;
 import vendingmachine.exception.MachineException;
 import vendingmachine.utility.NumberUtility;
 
 public class Machine {
     private static final int MIN_MONEY_UNIT = 10;
     private final Map<Coin,Integer> leftCoin;
-    private final int insideMoney;
+    private int insideMoney;
     private final static String INVALID_LEFT_COIN_MONEY = "유효하지 않은 자판기 보유 금액입니다.";
 
     public Machine(String leftMoney){
@@ -43,5 +41,14 @@ public class Machine {
 
     public String getMachineCoinSummery(){
         return MachineFormatter.getMachineCoinSummery(leftCoin);
+    }
+
+    public void addRemainMoney(int price) {
+        insideMoney += price;
+    }
+
+    public String getMachineRemainCoinSummery(int leftMoney) {
+        RemainCoinCalculateResult calculatedMachineLeftCoinMapByLeftMoney = CoinCalculator.getCalculatedMachineLeftCoinMapByLeftMoney(leftMoney, leftCoin);
+        return MachineFormatter.getMachineCoinSummery(calculatedMachineLeftCoinMapByLeftMoney.getCoinMap());
     }
 }

@@ -21,7 +21,7 @@ public enum Coin{
         int[] amountArr = new int[coins.length];
 
         for(int i=0;i<coins.length;i++ ){
-            amountArr[i++] = coins[i].amount;
+            amountArr[i] = coins[i].amount;
         }
         return amountArr;
     }
@@ -32,7 +32,7 @@ public enum Coin{
 
     public static Coin getCoinByAmount(int amount){
         for(Coin coin : Coin.values()){
-            if(coin.amount == coin.getAmount()){
+            if(amount == coin.getAmount()){
                 return coin;
             }
         }

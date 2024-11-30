@@ -11,7 +11,7 @@ public class NumberUtility {
     }
 
     public static boolean isPositive(int leftMoney) {
-        if(leftMoney >= 0){
+        if(leftMoney >= 1){
             return true;
         }
         return false;
